@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;example.com&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Gemini&quot;,&quot;version&quot;:&quot;8.4.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;left&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:true,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:false,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:false,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:null,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:false,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;搜索...&quot;,&quot;empty&quot;:&quot;没有找到任何搜索结果：${query}&quot;,&quot;hits_time&quot;:&quot;找到 ${hits} 个搜索结果（用时 ${time} 毫秒）&quot;,&quot;hits&quot;:&quot;找到 ${hits} 个搜索结果&quot;}}</script>
+<meta name="description" content="lab3心得本次实验比较复杂，整体构造难度较大。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件构造博客：lab3心得">
+<meta property="og:url" content="http://example.com/2021/07/04/%E8%BD%AF%E4%BB%B6%E6%9E%84%E9%80%A0%E5%8D%9A%E5%AE%A2%EF%BC%9Alab3%E5%BF%83%E5%BE%97/index.html">
+<meta property="og:site_name" content="ego的博客">
+<meta property="og:description" content="lab3心得本次实验比较复杂，整体构造难度较大。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-07-04T14:50:57.000Z">
+<meta property="article:modified_time" content="2021-07-06T15:11:40.988Z">
+<meta property="article:author" content="ego">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2021/07/04/%E8%BD%AF%E4%BB%B6%E6%9E%84%E9%80%A0%E5%8D%9A%E5%AE%A2%EF%BC%9Alab3%E5%BF%83%E5%BE%97/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:false,&quot;isPost&quot;:true,&quot;lang&quot;:&quot;zh-CN&quot;,&quot;comments&quot;:true,&quot;permalink&quot;:&quot;http:&#x2F;&#x2F;example.com&#x2F;2021&#x2F;07&#x2F;04&#x2F;%E8%BD%AF%E4%BB%B6%E6%9E%84%E9%80%A0%E5%8D%9A%E5%AE%A2%EF%BC%9Alab3%E5%BF%83%E5%BE%97&#x2F;&quot;,&quot;path&quot;:&quot;2021&#x2F;07&#x2F;04&#x2F;软件构造博客：lab3心得&#x2F;&quot;,&quot;title&quot;:&quot;软件构造博客：lab3心得&quot;}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">&quot;&quot;</script>
+<title>软件构造博客：lab3心得 | ego的博客</title><script src="/js/config.js"></script>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">ego的博客</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#lab3%E5%BF%83%E5%BE%97"><span class="nav-number">1.</span> <span class="nav-text">lab3心得</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#IntervalSet"><span class="nav-number">1.1.</span> <span class="nav-text">IntervalSet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MultiIntervalSet"><span class="nav-number">1.2.</span> <span class="nav-text">MultiIntervalSet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DutyIntervalSet%E3%80%81ProcessIntervalSet%E3%80%81CourseIntervalSet"><span class="nav-number">1.3.</span> <span class="nav-text">DutyIntervalSet、ProcessIntervalSet、CourseIntervalSet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%A4%8D%E7%94%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%EF%BC%9AL"><span class="nav-number">1.4.</span> <span class="nav-text">面向复用的设计：L</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E5%A4%8D%E7%94%A8API%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.5.</span> <span class="nav-text">可复用API设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%94%E7%94%A8"><span class="nav-number">1.6.</span> <span class="nav-text">应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%85%A5"><span class="nav-number">1.7.</span> <span class="nav-text">数据读入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E5%8C%96"><span class="nav-number">1.8.</span> <span class="nav-text">变化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.9.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ego</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="mailto:1830414402@qq.com" title="E-Mail → mailto:1830414402@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/04/%E8%BD%AF%E4%BB%B6%E6%9E%84%E9%80%A0%E5%8D%9A%E5%AE%A2%EF%BC%9Alab3%E5%BF%83%E5%BE%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ego">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ego的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          软件构造博客：lab3心得
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-07-04 22:50:57" itemprop="dateCreated datePublished" datetime="2021-07-04T22:50:57+08:00">2021-07-04</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-07-06 23:11:40" itemprop="dateModified" datetime="2021-07-06T23:11:40+08:00">2021-07-06</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="lab3心得"><a href="#lab3心得" class="headerlink" title="lab3心得"></a>lab3心得</h1><p>本次实验比较复杂，整体构造难度较大。</p>
+<span id="more"></span>
+
+<h2 id="IntervalSet"><a href="#IntervalSet" class="headerlink" title="IntervalSet"></a>IntervalSet</h2><p>先根据题目要求，做好IntervalSet的接口。然后完成它的实现CommonIntervalSet类</p>
+<table>
+<thead>
+<tr>
+<th>void checkRep()</th>
+<th>/**     * 检查表示不变性     */</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>void insert(long start, long end, L label)</td>
+<td>/**     * 在当前对象中插入新的时间段和标签     */</td>
+</tr>
+<tr>
+<td>boolean remove(L label);</td>
+<td>/**     * 获得当前对象中的标签集合     */</td>
+</tr>
+<tr>
+<td>String getTelephone()</td>
+<td>/**     * 从当前对象中移除某个标签所关联的时间段     */</td>
+</tr>
+<tr>
+<td>long start(L label)</td>
+<td>/**     * 返回某个标签对应的时间段的开始时间     */</td>
+</tr>
+<tr>
+<td>long end(L label)</td>
+<td>/**     * 返回某个标签对应的时间段的结束时间     */</td>
+</tr>
+<tr>
+<td>void clear()</td>
+<td>/**     * 将表中元素清空     */</td>
+</tr>
+<tr>
+<td>String toString()</td>
+<td>/**     * 将对象内容表示为人容易理解的文本字符串形式     */</td>
+</tr>
+</tbody></table>
+<p>并完成AF,RI和Safety from rep exposure。</p>
+<h2 id="MultiIntervalSet"><a href="#MultiIntervalSet" class="headerlink" title="MultiIntervalSet"></a>MultiIntervalSet</h2><p>将其作为一个类来进行构造</p>
+<table>
+<thead>
+<tr>
+<th><L>  MultiIntervalSet<L> empty()</th>
+<th>/**     * 空构造方法     */</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MultiIntervalSet(IntervalSet<L>  initial)</td>
+<td>/**     * 创建一个非空对象：构造函数MultiIntervalSet(IntervalSet<L>  initial)，利用initial中包含的数据创建非空对象     * @param initial      *      intervalset类型的时间集     */</td>
+</tr>
+<tr>
+<td>void checkRep()</td>
+<td>/**     * 测试表示不变性     */</td>
+</tr>
+<tr>
+<td>void insert(long start, long end, L label)</td>
+<td>/**     * 在当前对象中插入新的时间段和标     * @param initial      *      intervalset类型的时间集     */</td>
+</tr>
+<tr>
+<td>Set<L> labels()</td>
+<td>/**     * 获得当前对象中的标签集合     * @return labels     *      标签集合     */</td>
+</tr>
+<tr>
+<td>boolean remove(L label)</td>
+<td>/**     * 从当前对象中移除某个标签所关联的所有时间段     * @param label     *      待移除标签     */</td>
+</tr>
+<tr>
+<td>IntervalSet<Integer>  intervals(L label)</td>
+<td>/**     * 从当前对象中获取与某个标签所关联的所有时间段     * @return set     *      与某个标签所关联的所有时间段     */</td>
+</tr>
+</tbody></table>
+<p>完成MultiIntervalSet类中的AF,RI和Safety from rep exposure。</p>
+<h2 id="DutyIntervalSet、ProcessIntervalSet、CourseIntervalSet"><a href="#DutyIntervalSet、ProcessIntervalSet、CourseIntervalSet" class="headerlink" title="DutyIntervalSet、ProcessIntervalSet、CourseIntervalSet"></a>DutyIntervalSet、ProcessIntervalSet、CourseIntervalSet</h2><p>对于这三个类，DutyIntervalSet选择CommonIntervalSet作为父类，另外两个则选择MulitiIntervalSet作为父类。</p>
+<p>三个子类在不同维度上有一定的差异，这里选择利用直接在子类中写方法来解决差异，既指导书中的方案2.进行设计。</p>
+<h2 id="面向复用的设计：L"><a href="#面向复用的设计：L" class="headerlink" title="面向复用的设计：L"></a>面向复用的设计：L</h2><p>对于L这三个类，则都要被设计成immutable的类型。</p>
+<h2 id="可复用API设计"><a href="#可复用API设计" class="headerlink" title="可复用API设计"></a>可复用API设计</h2><p>计算相似度：</p>
+<ol>
+<li><p>先要对整个公式进行计算上的简化，分子的计算为所有相似度的综合。可以采用类似括号匹配的方法来计算，设定一个similarity变量来记录相似度总和。</p>
+</li>
+<li><p>指定一个标签，将s1，s2中所有包含这个标签的集合全部取出，放入一个treeset当中，遇到start时压栈，遇到end时则弹栈，这个区间一定输入两个对象中的一个。</p>
+</li>
+<li><p>当遇到一个start压栈时，再次遇到start就压栈，遇到end则弹栈。计算end-start并将其加到similar中，遍历完所有start，end组合时结束计算，</p>
+</li>
+<li><p>计算分母，分别取s1，s2中最小起始点和最大结束点为min和max，用similar除以max-min即可。</p>
+</li>
+</ol>
+<p>计算时间冲突比例：</p>
+<ol>
+<li><p>思路类似计算相似度的方法，先声明一个ConflictRatio变量用于记录冲突时间比率。</p>
+</li>
+<li><p>将所有课程的起始时间放入一个startSet中，结束时间都放入endSet中。</p>
+</li>
+<li><p>当遇到第一个start后，再次遇到start，说明即将迎来时间冲突，此时压栈并从startSet中删掉start，再遇到end则弹栈并从endSet中删去end，将该end-start加入ConflictRatio中。</p>
+</li>
+<li><p>遍历完所有对后则结束计算，ConflictRatio为冲突时间总和，分母计算同上，用ConflictRatio除以分母返回即可。</p>
+</li>
+</ol>
+<p>计算空闲时间比例：</p>
+<ol>
+<li><p>这个问题比较简单。先设置一个freeTimeRatio用来返回空闲时间比率</p>
+</li>
+<li><p>对IntervalSet中所存的时间段，进行遍历，每个标签对应的start和end相减在都加到sum上。</p>
+</li>
+<li><p>计算分母，用endDate-startDate即可</p>
+</li>
+<li><p>用1减去sum除以分母即得到了空闲比率。</p>
+</li>
+<li><p>MultiIntervalSet中所实现的方法也类似，主要考虑重叠时间段，先将重叠时间段进行合并存储，再进行上述操作即可，整体思路一直。</p>
+</li>
+</ol>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>对于应用的设计，主要的难点体现在健壮性的设计上，整体虽然杂乱，但并不算很困难。</p>
+<h2 id="数据读入"><a href="#数据读入" class="headerlink" title="数据读入"></a>数据读入</h2><p>修改“排班管理”应用以扩展该功能。</p>
+<p>核心使用正则表达式匹配输入文件，再进行模式匹配来实现功能。</p>
+<p>因为不知道用户先输入的是三种表项的哪一种，所以先临时存储入三个表中之后再进行统一的插入。</p>
+<p>关键在于正则表达式的分割。</p>
+<h2 id="变化"><a href="#变化" class="headerlink" title="变化"></a>变化</h2><p>变化1：</p>
+<p>评估之前的设计是否可应对变化、代价如何</p>
+<p>之前的设计无法直接应对变化。增加了一个新的方法labelsNew()，将CommonIntervalSet规约和代码等进行了微调整。对将以前的几个调用labels()替换成调用labelsNew.整体代码改变量比较小。</p>
+<p>如何修改设计以应对变化</p>
+<p>因为CommonIntervalSet虽然原本不允许有重复标签的对象，但我所写的结构只需简单修改field声明类型即可改变此限制。</p>
+<p>变化2：</p>
+<p>评估之前的设计是否可应对变化、代价如何</p>
+<p>改变比较简单，可以直接复用已经在ProcessIntervalSet<L>中已覆写的方法，改变insert方法为判断是否会重叠。对于工作量的代价较小，但对程序空间来说使用了重复的代码，是一种浪费。</p>
+<p>如何修改设计以应对变化</p>
+<p>直接复制微调即可。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>lab3总体来说还是挺复杂的，做的过程中遇到了各种各样的问题，例如adt设计不合理啊，应用健壮性很差啊，不知道具体功能如何实现等等。但最终也都是一定程度的解决了，整个实验过程对课上的知识进行了深入应用，也有了更好的理解，总的来说收获不少。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="https://t.me/egowu">
+          <span class="icon">
+            <i class="fab fa-telegram"></i>
+          </span>
+
+          <span class="label">Telegram</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/06/04/%E8%BD%AF%E4%BB%B6%E6%9E%84%E9%80%A0%E5%8D%9A%E5%AE%A2%EF%BC%9Alab2%E5%BF%83%E5%BE%97/" rel="prev" title="软件构造博客：lab2心得">
+                  <i class="fa fa-chevron-left"></i> 软件构造博客：lab2心得
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/07/06/%E8%BD%AF%E4%BB%B6%E6%9E%84%E9%80%A0%E5%8D%9A%E5%AE%A2%EF%BC%9A%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="next" title="软件构造博客：复习笔记">
+                  软件构造博客：复习笔记 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+<script src="/js/comments.js"></script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ego</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
